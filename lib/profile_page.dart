@@ -1,0 +1,80 @@
+import 'package:flutter/material.dart';
+
+import 'demo_auth.dart';
+import 'login_screen.dart';
+
+class ProfilePage extends StatelessWidget {
+  final String username;
+
+  const ProfilePage({super.key, required this.username});
+
+  void logout(BuildContext context) {
+    DemoAuth.logout();
+
+    Navigator.of(context).pushAndRemoveUntil(
+      MaterialPageRoute(builder: (context) => const LoginScreen()),
+      (route) => false,
+    );
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(title: const Text('Student Profile')),
+      body: ListView(
+        padding: const EdgeInsets.all(24),
+        children: [
+          const CircleAvatar(
+            radius: 50,
+            backgroundColor: Colors.indigo,
+            child: Icon(Icons.person, size: 60, color: Colors.white),
+          ),
+          const SizedBox(height: 16),
+          const Text(
+            'Katherynne Rylle L. Salvacion',
+            textAlign: TextAlign.center,
+            style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
+          ),
+          const SizedBox(height: 8),
+          Text('Logged in as: $username', textAlign: TextAlign.center),
+          const SizedBox(height: 24),
+          const Card(
+            child: Column(
+              children: [
+                ListTile(
+                  leading: Icon(Icons.badge),
+                  title: Text('Student ID'),
+                  subtitle: Text('556007'),
+                ),
+                ListTile(
+                  leading: Icon(Icons.school),
+                  title: Text('Course and Section'),
+                  subtitle: Text('BSIT — CCE106L(3450)'),
+                ),
+                ListTile(
+                  leading: Icon(Icons.email),
+                  title: Text('Email'),
+                  subtitle: Text('k.salvacion.556007@umindanao.edu.ph'),
+                ),
+              ],
+            ),
+          ),
+          const SizedBox(height: 24),
+          SizedBox(
+            width: double.infinity,
+            child: ElevatedButton.icon(
+              onPressed: () => logout(context),
+              icon: const Icon(Icons.logout),
+              label: const Text('Logout'),
+              style: ElevatedButton.styleFrom(
+                backgroundColor: Colors.red,
+                foregroundColor: Colors.white,
+                padding: const EdgeInsets.symmetric(vertical: 14),
+              ),
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+}
