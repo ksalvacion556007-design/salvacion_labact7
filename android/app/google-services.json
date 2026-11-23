@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "448542809932",
+    "project_id": "salvaciondb-3a607",
+    "storage_bucket": "salvaciondb-3a607.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:448542809932:android:f9341b0d2f4f7453b539e9",
+        "android_client_info": {
+          "package_name": "com.example.salvacion_labact7"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA_2EKPZJ5QFx5c_0R4W6oRG8xfzDsvOu0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
